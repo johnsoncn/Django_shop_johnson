@@ -38,13 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
+    'shop.templates'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -81,10 +82,22 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',               # 数据库引擎
+#         'NAME': 'root',                                                      #数据库名称
+#         'USER': 'root',           # 换成 root                                        # 链接数据库的用户名
+#         'PASSWORD': '123456',                                # 链接数据库的密码
+#         'HOST': '49.234.212.236',                                                # mysql服务器的域名和ip地址
+#         'PORT': '3306',                                                        # mysql的一个端口号,默认是3306
+#     }
+# }
+
 # 准备数据库的连接信息
-DB_HOST = '192.168.182.10'
+DB_HOST = '49.234.212.236'
 DB_USER = 'root'
-DB_PASSWORD = '1234.com'
+DB_PASSWORD = '123456'
 DB_NAME = 'shop'
 
 # Password validation
@@ -124,3 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+
+    os.path.join(BASE_DIR,'shop','static')
+]

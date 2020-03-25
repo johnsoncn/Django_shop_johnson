@@ -19,5 +19,10 @@ from shop import views as shop_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', shop_views.index),
+    path('', shop_views.index, name = 'index'),  # 访问首页（127.0.0.1：8000）则跳转到login界面
+    path('login/', shop_views.login, name = 'login'),
+    path('cashier/', shop_views.cashier, name = 'cashier'),
+    path('main/', shop_views.main, name = 'main'),
+    path('main/sales_query/', shop_views.sales_query, name = 'sales_query'),
+
 ]
